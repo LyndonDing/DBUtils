@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Sep 16 11:35:47 CST 2015
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=dbUtils-1.0.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|DbUtils>~android/;<po|DbUtils>~com/~dingfch/~dbutils/~Admin/;<po|DbUtils>~com/~dingfch/~dbutils/~BuildConfig.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$anim.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$attr.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$bool.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$color.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$dimen.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$drawable.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$id.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$integer.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$layout.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$menu.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$string.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$style.class;<po|DbUtils>~com/~dingfch/~dbutils/~R$styleable.class;<po|DbUtils>~com/~dingfch/~dbutils/~R.class;<po|DbUtils>~com/~dingfch/~dbutils/~User.class;<jar|appcompat_v7.jar>
+includes=
