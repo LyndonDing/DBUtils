@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+
+    defaultConfig {
+        //applicationId "com.lyndon.dbutils"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "2.5.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+//dependsOn 可根据实际需要增加或更改
+task buildJar(dependsOn: ['compileReleaseSources'], type: Jar) {
+
+    appendix = "common"
+    baseName = "dbutil"
+    version = "1.0"
+    classifier = "release"
+
+    //后缀名
+    extension = "jar"
+    //最终的 Jar 包名，如果没设置，默认为 [baseName]-[appendix]-[version]-[classifier].[extension]
+    archiveName = "$baseName-$version-$classifier.$extension"
+
+    //需打包的资源所在的路径集
+    def srcClassDir = [project.buildDir.absolutePath + "/intermediates/classes/release"];
+    //初始化资源路径集
+    from srcClassDir
+
+    //去除路径集下部分的资源
+    exclude "com/lyndon/dbutils/BuildConfig.class"
+    exclude "com/lyndon/dbutils/BuildConfig\$*.class"
+    exclude "**/R.class"
+    exclude "**/R\$*.class"
+
+    //只导入资源路径集下的部分资源
+    include "com/lyndon/dbutils/**/*.class"
+
+    //注: exclude include 支持可变长参数
+}
