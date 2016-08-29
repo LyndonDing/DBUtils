@@ -574,7 +574,7 @@ public class DbUtils {
 
     public static class DaoConfig {
         private Context context;
-        private String dbName = "xUtils.db"; // default db name
+        private String dbName = "local.db"; // default db name
         private int dbVersion = 1;
         private DbUpgradeListener dbUpgradeListener;
 
