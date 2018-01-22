@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
-        //applicationId "com.lyndon.dbutils"
+        //applicationId "cn.ly.dbutils"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 1
         versionName "2.5.0"
     }
@@ -28,7 +28,7 @@ task buildJar(dependsOn: ['compileReleaseSources'], type: Jar) {
 
     appendix = "common"
     baseName = "dbutil"
-    version = "1.0"
+    version = "2.0"
     classifier = "release"
 
     //后缀名
@@ -42,13 +42,15 @@ task buildJar(dependsOn: ['compileReleaseSources'], type: Jar) {
     from srcClassDir
 
     //去除路径集下部分的资源
-    exclude "com/lyndon/dbutils/BuildConfig.class"
-    exclude "com/lyndon/dbutils/BuildConfig\$*.class"
+    //    exclude "com/lyndon/dbutils/BuildConfig.class"
+    //    exclude "com/lyndon/dbutils/BuildConfig\$*.class"
+    exclude "cn/ly/dbutils/BuildConfig.class"
+    exclude "cn/ly/dbutils/BuildConfig\$*.class"
     exclude "**/R.class"
     exclude "**/R\$*.class"
 
     //只导入资源路径集下的部分资源
-    include "com/lyndon/dbutils/**/*.class"
+    include "cn/ly/dbutils/**/*.class"
 
     //注: exclude include 支持可变长参数
 }
